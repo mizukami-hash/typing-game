@@ -1,0 +1,133 @@
+@charset 'utf-8';
+
+body {
+  text-align: center;
+  font-size: 14px;
+}
+h1,
+h2,
+div,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 10px;
+  gap: 5px;
+  display: flex;
+}
+
+.menu li a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: rgb(215, 123, 138);
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid rgb(215, 123, 138);
+}
+/* 入力エリア */
+.wrapper {
+  width: 100%;
+  /* height:50%; */
+  background-color: rgba(243, 236, 237, 0.3);
+}
+
+.menu li a.active {
+  background: rgb(215, 123, 138);
+  color: #fff;
+}
+
+.menu li a:not(.active):hover {
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+.content.active {
+  background: rgb(215, 123, 138);
+  color: #fff;
+  min-height: 150px;
+  padding: 12px;
+  display: block;
+}
+
+.content {
+  display: none;
+  /* height:250px; */
+}
+
+#target {
+  font-size: 30px;
+  margin: 40px auto;
+  letter-spacing: 0.1em;
+}
+#form {
+  ime-mode: inactive;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+}
+ul p {
+  display: inline-block;
+}
+#text {
+  font-size: 20px;
+  color: rgb(194, 235, 148);
+}
+
+/* tab2 */
+#lists {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  vertical-align: middle;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  all: unset;
+  height: 30px;
+  background-color: #aaa;
+  padding: 3px 15px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+#tab3 p {
+  color: yellow;
+  width: 80px;
+  margin: 15px 0 0 15px;
+}
+
+h2 {
+  color: rgb(194, 235, 148);
+}
+#tab3 ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 20%;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10px auto;
+}
