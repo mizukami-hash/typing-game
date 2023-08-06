@@ -8,17 +8,19 @@
   <body>
     <div class="container">
       <ul class="menu">
-        <li><a href="#" class="active" data-id="tab1" id="gameArea">typing</a></li>
+        <li>
+          <a href="#" class="active" data-id="tab1" id="gameArea">typing</a>
+        </li>
         <li><a href="#" data-id="tab2">MyList</a></li>
         <li><a href="#" data-id="tab3">List</a></li>
       </ul>
 
       <section class="content active" id="tab1">
-        <p id="text">Please select the list below</p>
-        <p id ="start"></p>
+        <h1 id="text" class="title">リストを選択</h1>
+
         <div class="wrapper">
-        <p id="target">&nbsp;</p>
-        <p id="result"></p>
+          <p id="target">&nbsp;</p>
+          <p id="result"></p>
         </div>
         <button id="existingListEasy">Easy</button>
         <button id="existingListHard">Hard</button>
@@ -26,47 +28,44 @@
       </section>
 
       <section class="content" id="tab2">
-        <input type="tel" placeholder="words" id="form"  />
+        <h1 class="title">リストを作成</h1>
+        <input type="tel" placeholder="english" id="form" />
         <button id="addBtn">add</button>
-        <button id="clearBtn">clear</button>
-        <ul id="lists">
-        </ul>
+        <button id="clearBtn">clear all</button>
+        <ul id="lists"></ul>
       </section>
 
       <section class="content" id="tab3">
-      <div class="lists">
-        <h2>Easy</h2>
+        <h1>単語一覧</h1>
+        <p class="title">Easy</p>
         <ul>
-        <li>red</li>
-        <li>blue</li>
-        <li>pink</li>
-        <li>admit</li>
-        <li>actor</li>
-        <li>alert</li>
-        <li>april</li>
-        <li>below</li>
-        <li>flower</li>
-        <li>coffee</li>
-        <li>sun</li>
-        <li>mouse</li>
-        <li>cat</li>
+          <li>red</li>
+          <li>blue</li>
+          <li>pink</li>
+          <li>admit</li>
+          <li>actor</li>
+          <li>alert</li>
+          <li>april</li>
+          <li>below</li>
+          <li>flower</li>
+          <li>coffee</li>
+          <li>sun</li>
+          <li>mouse</li>
+          <li>cat</li>
         </ul>
 
-        <h2>Hard</h2>
+        <p class="title">Hard</p>
         <ul>
-        <li>absentminded</li>
-        <li>anachronism</li>
-        <li>buckminsterfullerene</li>
-        <li>circumlocution</li>
-        <li>counterintelligence</li>
-        <li>contextualization</li>
-        <li>dendrochronology</li>
-        <li>earthshattering</li>
-</ul>
-      
-        
+          <li>absentminded</li>
+          <li>anachronism</li>
+          <li>buckminsterfullerene</li>
+          <li>circumlocution</li>
+          <li>counterintelligence</li>
+          <li>contextualization</li>
+          <li>dendrochronology</li>
+          <li>earthshattering</li>
+        </ul>
       </section>
-      </div>
     </div>
 
     <script src="main.js"></script>

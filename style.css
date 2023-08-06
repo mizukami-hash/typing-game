@@ -16,7 +16,7 @@ li {
 
 .container {
   margin: 30px auto;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .menu {
@@ -87,7 +87,7 @@ ul {
 ul p {
   display: inline-block;
 }
-#text {
+.title {
   font-size: 20px;
   color: rgb(194, 235, 148);
 }
@@ -112,15 +112,12 @@ button {
   margin-right: 5px;
 }
 
-#tab3 p {
-  color: yellow;
-  width: 80px;
-  margin: 15px 0 0 15px;
+h1 {
+  margin: 10px 0;
+  color: rgb(236, 219, 188);
+  font-weight: normal;
 }
 
-h2 {
-  color: rgb(194, 235, 148);
-}
 #tab3 ul {
   list-style: none;
   display: flex;
@@ -130,4 +127,9 @@ h2 {
   flex-wrap: wrap;
   width: 80%;
   margin: 10px auto;
+}
+
+.finished {
+  color: white;
+  background-color: rgb(215, 123, 138);
 }

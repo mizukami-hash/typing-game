@@ -25,35 +25,23 @@
   //   // =================================================
 
   const target = document.querySelector("#target");
-  // document.querySelector("#target2");
   const easyBtn = document.querySelector("#existingListEasy");
   const hardBtn = document.querySelector("#existingListHard");
   const myListBtn = document.querySelector("#myList");
   const clearBtn = document.querySelector("#clearBtn");
   const form = document.querySelector("#form");
   const gameArea = document.querySelector("#gameArea");
-  const text = document.querySelector("#start");
   let loc = 0;
-  let isActive = false;
-  // if(gameArea.classList.contains("active")){
-  //   console.log("contain");
-  // }
 
   let words1 = ["red", "blue", "pink"];
   let word;
 
-  if (gameArea.classList.contains("active")) {
-    console.log("contain");
-  }
-
   function setWord() {
-    // タブ選択状態なら
     word = words1.splice(Math.floor(Math.random() * words1.length), 1)[0];
     target.textContent = word;
     loc = 0;
     target.style.fontSize = "30px";
-    // target.style.overflow = "wrap";
-    text.textContent = "Please press the displayed keys";
+    target.classList.remove("finished");
   }
 
   document.addEventListener("keydown", (e) => {
@@ -66,8 +54,11 @@
 
       if (loc === word.length) {
         if (words1.length === 0) {
-          document.querySelector("#text").textContent = "Finished!";
+          target.textContent = "Finished!";
+          target.classList.add("finished");
+          return;
         }
+
         setWord();
       }
     }
@@ -126,13 +117,8 @@
       // 単語をliとして追加
       const li = document.createElement("li");
       const p = document.createElement("p");
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.id = "checkbox";
-      checkbox.name = "toDelete";
       p.textContent = form.value;
 
-      li.appendChild(checkbox);
       li.appendChild(p);
 
       document.querySelector("#lists").appendChild(li);
@@ -153,12 +139,7 @@
     Object.keys(words).forEach((element) => {
       const li = document.createElement("li");
       const p = document.createElement("p");
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.id = "checkbox";
-      checkbox.name = "toDelete";
 
-      li.appendChild(checkbox);
       li.appendChild(p);
       p.textContent = words[element];
       document.querySelector("#lists").appendChild(li);
@@ -173,130 +154,4 @@
     });
     localStorage.clear("myWords");
   });
-
-  // 入力が終わったら次の文字をセット
-  //   function setWord() {
-  //     word = words.splice(Math.floor(Math.random() * words.length), 1)[0];
-  //     target.textContent = word;
-  //     loc = 0;
-  //   }
-
-  //   let words = ["red", "blue", "pink"];
-  //   const wordsEasy =["ball","auto","book","card","cook","sun","name","me","air"];
-  //   // const hard =["specialist","specialist","starvation","subjective","announcement",
-  // // "authenticity","bibliography"];
-  //   let word;
-  //   let loc = 0;
-  //   let isPlaying = false;
-  // //   let jsonString;
-
-  //   const target = document.getElementById("target");
-  //   const form = document.querySelector("#form");
-  //   const addBtn = document.querySelector("#addBtn");
-
-  //   // My listへの単語の登録
-  //   addBtn.addEventListener("click", () => {
-  //     if(form.value !== ''){
-  //       // 単語をliとして追加
-  //     const li = document.createElement("li");
-  //     const p = document.createElement("p");
-  //     const checkbox = document.createElement("input");
-  //     checkbox.type = "checkbox";
-  //     checkbox.id="checkbox";
-  //     checkbox.name = "toDelete"
-  //     p.textContent = form.value;
-
-  //     li.appendChild(checkbox);
-  //     li.appendChild(p);
-  //     // ul
-  //     document.querySelector("#lists").appendChild(li);
-  //     words.push(form.value);
-  //     localStorage.setItem("words", JSON.stringify(words));
-  //     form.value = "";
-  //     }
-  //   });
-
-  //   window.addEventListener("load", () => {
-  //     const words = JSON.parse(localStorage.getItem("words"));
-  //     Object.keys(words).forEach((element) => {
-  //       const li = document.createElement("li");
-  //       const p = document.createElement("p");
-  //       const checkbox = document.createElement("input");
-  //       checkbox.type = "checkbox";
-  //       checkbox.id="checkbox";
-  //       checkbox.name = "toDelete"
-
-  //       li.appendChild(checkbox);
-  //       li.appendChild(p);
-  //       p.textContent = words[element];
-  //       document.querySelector("#lists").appendChild(li);
-  //     });
-  //   });
-  //     // .forEach((element) => {
-  //       //  });
-
-  //  words = JSON.parse(localStorage.getItem("words"));
-
-  //     word = words[Math.floor(Math.random() * words.length)];
-  //     target.textContent = word;
-
-  //   document.addEventListener("keydown", (e) => {
-  //     // 違う文字が入力されたら返す
-  //     if (e.key !== word[loc]) {
-  //       return;
-  //     }
-  //     loc++;
-  //     target.textContent = "_".repeat(loc) + word.substring(loc);
-
-  //     if (loc === word.length) {
-  //       if (words.length === 0) {
-  //         const result = document.getElementById("result");
-  //         result.textContent = "Finished";
-  //       }
-  //     }
-  //     if (loc === word.length) {
-  //       setWord();
-  //     }
-  //   });
-  // // 削除
-  //   function deleteRow() {
-  //     const checkedList = document.querySelectorAll("input[name =toDelete]:checked");
-
-  //     if (checkedList.length === 0) {
-  //       return;
-  //     }
-  //     if (!confirm("削除しますか？")) {
-  //       return;
-  //     }
-
-  //     checkedList.forEach((check) => {
-  //       check.closest("li").remove()
-  //       localStorage.removeItem("words");
-  //     });
-
-  //   }
-
-  //   document.querySelector("#deleteBtn").addEventListener("click",()=>{
-  //     deleteRow();
-  //   });
-
-  //   const myList = document.querySelector("#myList");
-
-  // // ul
-  //   const easy = document.querySelector("#easy");
-  //   const hard = document.querySelector("#hard");
-
-  //   // tab1のリスト変更ボタン
-  //   const changeListBtn =document.querySelector("#easyList");
-
-  // changeListBtn.addEventListener('click',()=>{
-  //   target.textContent =
-
-  // });
-
-  // document.addEventListener("keydown",e=>{
-  //   const target = document.getElementById("target");
-  //   target.textContent = e.key;
-
-  // });
 }
